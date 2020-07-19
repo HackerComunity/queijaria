@@ -1,0 +1,62 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    body {
+        background-image: url("../images/fundo-login.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top;
+        background-size: cover;
+    }
+    #Content-login {
+        border: 1px solid white;
+        border-radius: 5px;
+        margin: 13% 5% 0 5% !important;
+        background: rgba(107, 50, 06, 0.2);
+    }
+    #Content-login .cont-image-login img {
+        width: 250px;
+        height: 150px;
+        margin-left: -10px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body {
+        background-image: url("../images/fundo-login.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top;
+        background-size: cover;
+    }
+    #Content-login {
+        margin: 4% 5% 0 5% !important;
+        background: rgba(107, 50, 06, 0.2);
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    #Content-login .cont-image-login {
+        text-align: center;
+
+    }
+    #Content-login .cont-image-login img {
+        width: 350px;
+        height: 250px;
+        margin-left: -10px;
+    }
+}
