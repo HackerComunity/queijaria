@@ -33,7 +33,7 @@ Route::group(["prefix" => "management", "namespace" => "Management", "as" => "ma
         Route::get("home", "AuthController@home")->name("home");
 
         /**
-         * Clientes e página inicial....
+         * Gestão...
          */
         Route::resource('control', 'AppController');
         Route::get('clients-inactives', 'AppController@clientsInactives')->name('clients-inactives');
@@ -43,7 +43,7 @@ Route::group(["prefix" => "management", "namespace" => "Management", "as" => "ma
         Route::post('create-cliente', 'AppController@createCliente')->name('create.cliente');
 
         /**
-         * Pagina de vendas...
+         * Vendas...
          */
         Route::resource('sales', 'VendasController');
         Route::get('completed-sales', 'VendasController@completedSales')->name('sales-completed.sale');
@@ -51,12 +51,22 @@ Route::group(["prefix" => "management", "namespace" => "Management", "as" => "ma
         Route::post('searchsale', 'VendasController@busca')->name('searchvenda.sale');
 
         /**
-         * Pagina dos produtos..
+         * Produtos..
          */
         Route::resource('products', 'ProdutoController');
         Route::get('products-inactives', 'ProdutoController@productsInactives')->name('products.products-inactives');
         Route::put('active-product/{product}', 'ProdutoController@activeProduct')->name('products.active-product');
         Route::delete('delete-product/{product}', 'ProdutoController@deleteProduct')->name('products.delete-product');
+
+        /**
+         * Configurações..
+         */
+        Route::get('others/profile', "ConfigController@profile")->name("user.profile");
+        Route::get('users', "ConfigController@usersAll")->name("user.all");
+        Route::get('create-user', "ConfigController@newUserForm")->name("user.new");
+        Route::post('others/register-user', 'ConfigController@registerUser')->name('register.user');
+        Route::delete('others/register-user/{id}', 'ConfigController@deleteUser')->name('user.delete');
+        Route::put('others/update-user/{id}', 'ConfigController@updateUser')->name('user.update');
 
         /**
          * Getters

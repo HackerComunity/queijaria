@@ -30,17 +30,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @php
-                    $total_vendas = 0;
-                    $calc_total_pedido = 0;
-                    $calc_total_valor_pedido = 0;
-                @endphp
                 @foreach($paginate as $item)
-                    @php
-                        $total_vendas += 1;
-                        $calc_total_pedido += intval($item->quantidade);
-                        $calc_total_valor_pedido += floatval(str_replace("R$ ", "", $item->valor_venda));
-                    @endphp
                     <tr id="tr-select-tds">
                         <td>{{ $item->cod_venda }}</td>
                         <td>{{ $item->nome_client }}</td>
@@ -59,19 +49,6 @@
                 @endforeach
 
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Total</th>
-                        <th>{{ $total_vendas }} - Vendas</th>
-                        <th></th>
-                        <th>{{ $calc_total_pedido }}</th>
-                        <th>{{ "R$ $calc_total_valor_pedido" }}</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
     </div>

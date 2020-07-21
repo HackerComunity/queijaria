@@ -35,7 +35,7 @@ class ProdutoController extends Controller
     {
         $products = Produtos::where("situacao", 1)->get();
         echo view('Management.sections.Produtos.products-inactive')->with([
-            "title" => "Queijo Caseiro | Produtos",
+            "title" => "Queijo Caseiro | Produtos inativos",
             "paginate" => $products,
             "nameuser" => Auth::user()
         ]);

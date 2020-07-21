@@ -25,7 +25,9 @@
                     <th>Quantidade</th>
                     <th>Tipo</th>
                     <th></th>
-                    <th></th>
+                    @if(CheckTypeUser($nameuser->type) == "Administrador" || CheckTypeUser($nameuser->type) == "Desenvolvedor")
+                        <th></th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>

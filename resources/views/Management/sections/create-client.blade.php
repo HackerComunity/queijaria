@@ -23,7 +23,7 @@
 
                 <div class="col-4 col-md-2 mb-3">
                     <label for="cod_client">Código:</label>
-                    <input type="text" class="form-control" id="name_client" name="cod_client" value="{{ GeraCodigClient() }}">
+                    <input type="text" class="form-control" id="cod_client" name="cod_client" value="{{ GeraCodigClient() }}">
                 </div>
 
                 <div class="col-8 col-md-7 mb-3">
@@ -55,9 +55,31 @@
 
             <hr class="mb-4">
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+            <button class="btn btn-primary btn-lg btn-block" id="save_submit" type="submit">Cadastrar</button>
         </form>
     </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $("#save_submit").click(function (e) {
+                e.preventDefault();
+                var name_client = document.getElementById("name_client");
+                var cidade = document.getElementById("cidade");
+                console.log(name_client.value)
+                if(name_client.value.length <= 0) {
+                    $("#name_client").notify("Por favor, informe um nome para o cliente!", "error");
+                }
+                if(cidade.value.length <= 0) {
+                    $("#cidade").notify("Por favor, informe a cidade do cliente!", "error");
+                }
+                if(name_client.value.length > 0 && cidade.value.length > 0) {
+                    $("form").submit();
+                }
+            })
+        })
+    </script>
 @endsection

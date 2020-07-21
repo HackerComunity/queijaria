@@ -303,4 +303,7 @@ button.custom-button-actions:focus {
     background: none;
 }
 
-/* ==================== Componentes Cards Home ===================== */
+/* ==================== DATATABLES ===================== */
+.form_search_custom {
+    width: 10px!important;
+}

@@ -21,8 +21,12 @@ mix
     ], 'public/assets/css/style-dash.css')
 
     .scripts([
-        "resources/views/assets/js/script.js"
+        "resources/views/assets/js/script.js",
     ], 'public/assets/js/script.js')
+
+    .scripts([
+        "resources/views/assets/js/notify.min.js",
+    ], 'public/assets/js/notify.min.js')
 
     .copyDirectory('resources/views/assets/images', 'public/assets/images')
     .copyDirectory('resources/views/assets/DataTables', 'public/assets/DataTables')

@@ -54,7 +54,7 @@
                             <div class="row">
 
                                 <div class="col-6">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Criar</button>
+                                    <button class="btn btn-primary btn-lg btn-block" id="save_submit" type="submit">Criar</button>
                                 </div>
 
                                 <div class="col-6">
@@ -70,4 +70,28 @@
         </div>
     </div>
 
+@endsection
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $("#save_submit").click(function (e) {
+                e.preventDefault();
+                var quantidade = document.getElementById("quantidade");
+                var tipo = document.getElementById("tipo");
+                var desc = document.getElementById("desc");
+                if(quantidade.value.length <= 0) {
+                    $("#quantidade").notify("Por favor, informe a quantidade do produto!", "error");
+                }
+                if(tipo.value.length <= 0) {
+                    $("#tipo").notify("Por favor, informe o tipo de produto!", "error");
+                }
+                if(desc.value.length <= 0) {
+                    $("#desc").notify("Por favor, informe uma descrição para o produto!", "error");
+                }
+                if(quantidade.value.length > 0 && tipo.value.length > 0) {
+                    $("form").submit();
+                }
+            })
+        })
+    </script>
 @endsection

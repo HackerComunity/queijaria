@@ -8,6 +8,7 @@ function CheckPending($value) {
 function CheckTypeUser($value) {
     if ($value == 0) return "Administrador";
     if ($value == 1) return "Vendedor";
+    if ($value == 2) return "Desenvolvedor";
 }
 
 function generator()
