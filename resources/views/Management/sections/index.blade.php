@@ -29,6 +29,9 @@
                         <th scope="col">Valor total</th>
                         <th scope="col"></th>
                         <th></th>
+                        @if(CheckTypeUser($nameuser->type) == "Administrador" || CheckTypeUser($nameuser->type) == "Desenvolvedor")
+                            <th scope="col"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>

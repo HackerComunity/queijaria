@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-12 col-md-5 mb-3">
                         <label for="username">Usuário:</label>
-                        <input type="text" class="form-control" id="username" name="username" value="{{ $nameuser["name"] }}" required="">
+                        <input type="text" class="form-control" id="username" name="username" value="{{ $nameuser["user"] }}" required="">
                     </div>
                     <div class="col-12 col-md-7 mb-3">
                         <label for="password">Senha:</label>

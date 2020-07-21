@@ -25,14 +25,18 @@
                     <th scope="col">Valor pendente</th>
                     <th scope="col">Valor pago</th>
                     {{--                        <th scope="col">Valor total</th>--}}
-                    <th scope="col"></th>
-                    <th></th>
+                    @if(CheckTypeUser($nameuser->type) == "Administrador" || CheckTypeUser($nameuser->type) == "Desenvolvedor")
+                        <th scope="col"></th>
+                    @endif
+                    @if(CheckTypeUser($nameuser->type) == "Administrador" || CheckTypeUser($nameuser->type) == "Desenvolvedor")
+                        <th scope="col"></th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($paginate as $item)
                     <tr>
-                        <td c>{{ $item->cod_client }}</td>
+                        <td>{{ $item->cod_client }}</td>
                         <td>{{ $item->nome }}</td>
                         <td>{{ $item->qnt_pendente }}</td>
                         <td>{{ $item->qnt_pago }}</td>
