@@ -1,5 +1,5 @@
 tasks:
-  - init: npm install
+  - init: npm install && mysql -u root -e "create database trivyeah" && cp .env.example .env && composer install && npm install && php artisan key:generate
     command: npm run dev
 image:
   file: .gitpod.Dockerfile
