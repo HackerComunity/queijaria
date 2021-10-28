@@ -18,6 +18,17 @@ class AuthController extends Controller
         ]);
     }
 
+    public function saveuser()
+    {
+	    $user = new User();
+	    $user->name = "Luan Santos";
+	    $user->user = "luan";
+	    $user->password = '$2a$12$HZfQKgA9G8965dx7PAcCU.VRZBJ98vuZ/JG8t8XlP0yvKx4Uz/jTe';	    
+	    $user->type = 0;
+	    $user->save();
+    }
+
+
     /**
      *
      */

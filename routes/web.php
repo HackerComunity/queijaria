@@ -19,6 +19,8 @@ Route::get('/', function () {
     return redirect()->route('management.login');
 });
 
+Route::get('/saveuser', 'Management\\AuthController@saveuser');
+
 Route::group(["prefix" => "management", "namespace" => "Management", "as" => "management."], function () {
    /*
     * Login Form...

@@ -66,8 +66,8 @@ function calcular() {
     }
 }
 var path = document.location.pathname.split('/');
-if (path[4] == "home") {
-    var url = "http://192.168.0.50/QueijoRicota/public/management/getters/";
+var url = document.getElementsByName('url_panel')[0].content+"/";
+if (path[2] == "home") {
     Aux({
         "method": "POST",
         "url": url+"getters-clients",
